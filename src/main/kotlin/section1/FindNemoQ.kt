@@ -1,9 +1,14 @@
 package section1
 
+fun main(){
+    val listOfNames = listOf("Emma","Emi","Solo","Tari")
+    val result = findNemo(listOfNames)
+    println(result)
+}
+
 fun findNemo(list: List<String>): String{
-    var result = ""
     for (i in list){
-        result = if (i == "Nemo") "Found Nemo" else "Nemo not found"
+        if (i == "Nemo") return "Found Nemo"
     }
-    return result
+    return "Nemo not Found"
 }
