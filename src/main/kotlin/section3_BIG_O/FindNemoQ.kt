@@ -1,4 +1,4 @@
-package section1
+package section3_BIG_O
 
 fun main(){
     val listOfNames = listOf("Emma","Emi","Solo","Tari")
