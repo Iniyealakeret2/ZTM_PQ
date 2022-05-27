@@ -4,8 +4,14 @@ fun main(){
     val array1 = listOf('a','b','c')
     val array2 = listOf('d','e','f')
     val array3 = listOf('h','i','c')
+    println("BRUTE FORCE")
+    println("---------------------")
     println(commonItemsInTwoArrays(array1,array2))
     println(commonItemsInTwoArrays(array1,array3))
+    println("---------------------")
+    println("OPTIMIZED WITH HASHSET")
+    println(commonItemsInTwoArraysOptimal(array1,array2))
+    println(commonItemsInTwoArraysOptimal(array1,array3))
 }
 // QUESTION: Given two arrays create a function that let user know(true/false)
 // whether these two arrays contain any common items
@@ -27,8 +33,18 @@ fun commonItemsInTwoArrays(array1: List<Char>, array2: List<Char>): Boolean{
     }
     return false
 }
-// This is O( a * b) because the arrays can be of different sizes
-// optimal solutions
-fun commonItemsInTwoArraysOptimal(array1: List<Char>, array2: List<Char>){
+// This is O( a * b) because the arrays can be of different sizes, and it is a O(n^2)
 
-}
+// optimal solutions
+fun commonItemsInTwoArraysOptimal(array1: List<Char>, array2: List<Char>): Boolean{
+    // create an hashSet
+    val hashSet = HashSet<Char>()
+    for (i in array1){
+        hashSet.add(i)
+    }
+    println("$hashSet")
+    for (j in array2){
+        if (hashSet.contains(j)) return true
+    }
+    return false
+}// Time complexity is O(a + b) => O(n)
