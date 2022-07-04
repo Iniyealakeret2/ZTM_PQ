@@ -40,4 +40,17 @@ fun main(){
     println(poppedValue)
     println(linkedList.size)
     println("---------------------------------------")
+    println("----------------AFTER REMOVELAST OPERATION-----------------------")
+    val lastNode = linkedList.removeLast()
+    println(linkedList)
+    println(lastNode)
+    println(linkedList.size)
+    println("---------------------------------------")
+    println("----------------AFTER REMOVEDAFTER OPERATION-----------------------")
+    val currentNode = linkedList.findNodeAt(1)!!
+    val removedNode = linkedList.removeAfter(currentNode)
+    println(linkedList)
+    println(removedNode)
+    println(linkedList.size)
+    println("---------------------------------------")
 }

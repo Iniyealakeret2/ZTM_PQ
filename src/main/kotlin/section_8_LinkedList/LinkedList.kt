@@ -52,7 +52,7 @@ class LinkedList<T> {
         }
         return currentNode
     }
-    // STEP 5.b(function to insert the found Node atbthat index)
+    // STEP 5.b(function to insert the found Node at that index)
     fun insert(value: T, afterNode: Node<T>): Node<T> {
         // checking if we have only one node in the list of
         if (tail == afterNode){
@@ -81,6 +81,36 @@ class LinkedList<T> {
     }
 
     /** REMOVING THE LAST NODE IN A LINKEDLIST */
-    //STEP 6 (REMOVELAST OPERATION)
+    //STEP 7 (REMOVELAST OPERATION)
+    fun removeLast(): T?{
+        val head = head ?: return null //If head is null, there’s nothing to remove, so you return null.
+        if (head.next == null) return pop() // if the next node is null, then it is the tail.(just remove it)
+        size -- // update the size of the list
+        //You keep searching for the next node until current.next is null. This
+        // signifies that current is the last node of the list (LINE 91 - 98)
+        var prevNode = head
+        var currentNode = head
+        var nextNode = currentNode.next
+        while (nextNode != null){
+            prevNode = currentNode
+            currentNode = nextNode
+            nextNode = currentNode.next
+        }
+        //Since current is the last node, you disconnect it using the prev.next reference.
+        // You also make sure to update the tail reference. ( LINE 101 - 102 )
+        prevNode.next = null
+        tail = prevNode
+        return currentNode.value
+    }
 
+    /** ADDING VALUES TO A SPECIFIC NODE LINKEDLIST */
+    //STEP 8 (REMOVEAFTER OPERATION)
+    //You’ll first find the node immediately before the node you wish to remove and then unlink it
+    fun removeAfter(node: Node<T>): T?{
+        val result = node.next?.value // the value of the node to remove
+        if (node.next == tail) tail = node // updating the tail reference if the node is the tail
+        if (node.next != null) size--
+        node.next = node.next?.next // getting the next value of the node that is just removed
+        return result
+    }
 }
