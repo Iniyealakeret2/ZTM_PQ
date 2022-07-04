@@ -4,7 +4,7 @@ class LinkedList<T> {
     //STEP 2
     private var head: Node<T>? = null
     private var tail: Node<T>? = null
-    private var size: Int = 0
+    var size: Int = 0
     //if the LinkedList is is Empty
     private fun isEmpty(): Boolean = size == 0
     //formatting the output
@@ -12,7 +12,7 @@ class LinkedList<T> {
         return if(isEmpty()) "Empty List" else "$head"
     }
 
-    /** ADDING VALUES TO A LINKEDLIST */
+    /** ADDING VALUES TO BEGINNING LINKEDLIST */
     // STEP 3 (PUSH OPERATION)
     //Adding a value at the front of the list is known as a push operation.
     //This is also known as head-first insertion
@@ -24,6 +24,7 @@ class LinkedList<T> {
          size++
     }
 
+    /** ADDING VALUES TO END LINKEDLIST */
     //STEP 4(APPEND OPERATION)
     //This adds a value at the end of the list, which is known as tail-end insertion.
     fun append(value:T){
@@ -36,6 +37,8 @@ class LinkedList<T> {
         tail = tail?.next
         size++
     }
+
+    /** ADDING VALUES TO A NODE LINKEDLIST */
     //STEP 5 (INSERT OPERATION)
     //This operation inserts a value at a particular place in the list
     // STEP 5.a (find the index to insert)
@@ -43,7 +46,7 @@ class LinkedList<T> {
         // get the current node and current index
         var currentNode = head
         var currentIndex = 0
-        while (currentNode != null && currentIndex< index){
+        while (currentNode != null && currentIndex < index){
             currentNode = currentNode.next
             currentIndex++
         }

@@ -17,12 +17,21 @@ fun main(){
 
     // Using the LinkedList function to create a LinkedList(push operation)
     val linkedList = LinkedList<String>()
-//    linkedList.push("Emma")
-//    linkedList.push("Solo")
-//    linkedList.push("Tari")
+    linkedList.push("Emma")
+    linkedList.push("Solo")
+    linkedList.push("Tari")
     //append operation
     linkedList.append("emma")
+    //insert OPERATION
+    println("------------BEFORE INSERTION---------------------------")
+    println(linkedList)
+    println(linkedList.size)
+    println("---------------------------------------")
+    val newValue = linkedList.findNodeAt(2)
+    linkedList.insert("Tonkiri",newValue!!)
+
     println("---------------------------------------")
     println(linkedList)
+    println(linkedList.size)
     println("---------------------------------------")
 }
