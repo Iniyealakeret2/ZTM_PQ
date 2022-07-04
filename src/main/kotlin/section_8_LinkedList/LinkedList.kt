@@ -24,7 +24,7 @@ class LinkedList<T> {
          size++
     }
 
-    /** ADDING VALUES TO END LINKEDLIST */
+    /** ADDING VALUES TO END OF LINKEDLIST */
     //STEP 4(APPEND OPERATION)
     //This adds a value at the end of the list, which is known as tail-end insertion.
     fun append(value:T){
@@ -38,7 +38,7 @@ class LinkedList<T> {
         size++
     }
 
-    /** ADDING VALUES TO A NODE LINKEDLIST */
+    /** ADDING VALUES TO A SPECIFIC NODE LINKEDLIST */
     //STEP 5 (INSERT OPERATION)
     //This operation inserts a value at a particular place in the list
     // STEP 5.a (find the index to insert)
@@ -66,5 +66,21 @@ class LinkedList<T> {
         size++
         return newNode
     }
+
+    /** REMOVING VALUES LINKEDLIST OPERATIONS */
+
+    /** ADDING VALUES TO A SPECIFIC NODE LINKEDLIST */
+    //STEP 6 (POP OPERATION)
+    //Removing a value at the front of the list is often referred to as pop.
+    fun pop():T?{
+        if(!isEmpty()) size--
+        val result = head?.value //getting the value of head and returning it
+        head = head?.next // moving the value of head down a node thereby eliminating the first value
+        if (isEmpty()) tail = null
+        return result
+    }
+
+    /** REMOVING THE LAST NODE IN A LINKEDLIST */
+    //STEP 6 (REMOVELAST OPERATION)
 
 }

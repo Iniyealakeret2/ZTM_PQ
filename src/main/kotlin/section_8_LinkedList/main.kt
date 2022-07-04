@@ -21,17 +21,23 @@ fun main(){
     linkedList.push("Solo")
     linkedList.push("Tari")
     //append operation
-    linkedList.append("emma")
+    linkedList.append("Prosper")
     //insert OPERATION
-    println("------------BEFORE INSERTION---------------------------")
+    println("------------BEFORE INSERTION OPERATION---------------------------")
     println(linkedList)
     println(linkedList.size)
-    println("---------------------------------------")
+
     val newValue = linkedList.findNodeAt(2)
     linkedList.insert("Tonkiri",newValue!!)
 
-    println("---------------------------------------")
+    println("----------------AFTER INSERTION OPERATION-----------------------")
     println(linkedList)
+    println(linkedList.size)
+    println("---------------------------------------")
+    println("----------------AFTER POP OPERATION-----------------------")
+    val poppedValue = linkedList.pop()
+    println(linkedList)
+    println(poppedValue)
     println(linkedList.size)
     println("---------------------------------------")
 }
